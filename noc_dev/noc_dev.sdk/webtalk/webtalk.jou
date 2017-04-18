@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:42 MST 2016
+# 
+# Start of session at: Sat Apr 15 17:59:47 2017
+# Process ID: 29839
+# Current directory: /home/virtual/noc_dev/noc_dev/noc_dev.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/virtual/noc_dev/noc_dev/noc_dev.sdk/webtalk/webtalk.log
+# Journal file: /home/virtual/noc_dev/noc_dev/noc_dev.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

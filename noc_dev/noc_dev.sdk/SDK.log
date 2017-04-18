@@ -1,0 +1,134 @@
+17:57:49 INFO  : Registering command handlers for SDK TCF services
+17:57:51 INFO  : Launching XSCT server: xsct -n -interactive /home/virtual/noc_dev/noc_dev/noc_dev.sdk/temp_xsdb_launch_script.tcl
+17:57:51 ERROR : (XSDB Server)awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+17:57:52 INFO  : XSCT server has started successfully.
+17:57:52 INFO  : Successfully done setting XSCT server connection channel  
+17:57:52 INFO  : Successfully done setting SDK workspace  
+17:57:52 INFO  : Processing command line option -hwspec /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper.hdf.
+17:58:32 INFO  : Inferring section assignments and sizes from elf file: /home/virtual/noc_dev/noc_dev/noc_dev.sdk/noc_dev/Debug/noc_dev.elf
+17:58:37 INFO  : Successfully generated /home/virtual/noc_dev/noc_dev/noc_dev.sdk/noc_dev/src/lscript.ld.
+17:58:37 INFO  : Applying linker script to all configurations of project noc_dev.
+17:58:37 INFO  : Setting rebuild state to true for all configurations of project noc_dev.
+17:58:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:58:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248585707" && level==0} -index 1' command is executed.
+17:58:51 INFO  : FPGA configured successfully with bitstream "/home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/sys_wrapper.bit"
+17:59:07 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error while running ps7_init method.
+No Elf file associated with target
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(TM.java:1089)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:514)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+17:59:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248585707" && level==0} -index 1' command is executed.
+17:59:22 INFO  : 'fpga -state' command is executed.
+17:59:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:59:23 INFO  : Jtag cable 'Digilent Zed 210248585707' is selected.
+17:59:23 INFO  : 'jtag frequency' command is executed.
+17:59:23 INFO  : Sourcing of '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:59:23 INFO  : Context for 'APU' is selected.
+17:59:23 INFO  : Hardware design information is loaded from '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/system.hdf'.
+17:59:23 INFO  : Context for 'APU' is selected.
+17:59:23 INFO  : 'stop' command is executed.
+17:59:23 INFO  : 'ps7_init' command is executed.
+17:59:23 INFO  : 'ps7_post_config' command is executed.
+17:59:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:59:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:59:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:59:23 INFO  : The application '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/noc_dev/Debug/noc_dev.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:59:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+loadhw /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+dow /home/virtual/noc_dev/noc_dev/noc_dev.sdk/noc_dev/Debug/noc_dev.elf
+----------------End of Script----------------
+
+17:59:23 INFO  : Memory regions updated for context APU
+17:59:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:59:23 INFO  : 'con' command is executed.
+17:59:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+con
+----------------End of Script----------------
+
+17:59:23 INFO  : Launch script is exported to file '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_noc_dev.elf_on_local.tcl'
+17:59:56 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+19:13:29 INFO  : Launching XSCT server: xsct -n -interactive /home/virtual/noc_dev/noc_dev/noc_dev.sdk/temp_xsdb_launch_script.tcl
+19:13:29 ERROR : (XSDB Server)awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+
+19:13:30 INFO  : XSCT server has started successfully.
+19:13:30 INFO  : Successfully done setting XSCT server connection channel  
+19:13:30 INFO  : Successfully done setting SDK workspace  
+19:13:34 INFO  : Registering command handlers for SDK TCF services
+19:13:34 INFO  : Processing command line option -hwspec /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper.hdf.
+19:13:35 INFO  : Checking for hwspec changes in the project sys_wrapper_hw_platform_0.
+19:13:35 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1492283088000,  Project:1492278182000
+19:13:35 INFO  : The hardware specification for project 'sys_wrapper_hw_platform_0' is different from /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper.hdf.
+19:13:35 INFO  : Copied contents of /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper.hdf into /sys_wrapper_hw_platform_0/system.hdf.
+19:13:39 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+19:13:40 INFO  : 
+19:13:42 INFO  : Updating hardware inferred compiler options for noc_dev.
+19:13:42 INFO  : Clearing existing target manager status.
+19:13:44 INFO  : Closing and re-opening the MSS file of ther project noc_dev_bsp
+19:13:44 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+19:13:45 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+19:13:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:13:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248585707" && level==0} -index 1' command is executed.
+19:13:59 INFO  : FPGA configured successfully with bitstream "/home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/sys_wrapper.bit"
+19:14:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248585707" && level==0} -index 1' command is executed.
+19:14:05 INFO  : 'fpga -state' command is executed.
+19:14:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:14:05 INFO  : Jtag cable 'Digilent Zed 210248585707' is selected.
+19:14:05 INFO  : 'jtag frequency' command is executed.
+19:14:05 INFO  : Sourcing of '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:14:05 INFO  : Context for 'APU' is selected.
+19:14:05 INFO  : Hardware design information is loaded from '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/system.hdf'.
+19:14:05 INFO  : Context for 'APU' is selected.
+19:14:05 INFO  : 'stop' command is executed.
+19:14:05 INFO  : 'ps7_init' command is executed.
+19:14:05 INFO  : 'ps7_post_config' command is executed.
+19:14:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:14:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:14:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:14:05 INFO  : The application '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/noc_dev/Debug/noc_dev.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:14:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+loadhw /home/virtual/noc_dev/noc_dev/noc_dev.sdk/sys_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+dow /home/virtual/noc_dev/noc_dev/noc_dev.sdk/noc_dev/Debug/noc_dev.elf
+----------------End of Script----------------
+
+19:14:05 INFO  : Memory regions updated for context APU
+19:14:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:14:05 INFO  : 'con' command is executed.
+19:14:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248585707"} -index 0
+con
+----------------End of Script----------------
+
+19:14:05 INFO  : Launch script is exported to file '/home/virtual/noc_dev/noc_dev/noc_dev.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_noc_dev.elf_on_local.tcl'
+19:14:37 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

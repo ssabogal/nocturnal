@@ -39,5 +39,3 @@ Network-on-Chip (NoC) - 3x3 2D Mesh with Wormhole-switching and XY-routing
     + Payload words
 
 2. The partition address (XY) starts at the southwest router.
-
-___
